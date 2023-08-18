@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="theme-color" content="#6495ed" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="manifest" href="./app.webmanifest" />
+
+    <title>Restaurant Apps</title>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Menuju ke konten</a>
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title">Hunger App</h1>
+      </div>
+      <button aria-label="menu" id="menu" class="header__menu">☰</button>
+    </header>
+
+    <nav id="drawer" class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#/home">Home</a></li>
+        <li class="nav__item"><a href="#/favorite">Favorite</a></li>
+        <li class="nav__item">
+          <a href="https://github.com/witojs" target="_blank">About Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <picture class="jumbotron">
+        <source media="(max-width: 480px)" srcset="./images/heros/hero-image-small.jpg" />
+        <source media="(max-width: 800px)" srcset="./images/heros/hero-image-medium.jpg" />
+        <img src="./images/heros/hero-image-large.jpg" alt="hero image" />
+      </picture>
+      <div class="hero__inner">
+        <h1 class="hero__title">Best Restaurant App</h1>
+        <p class="hero__tagline">Find Your Favorite Dish in Town!</p>
+      </div>
+    </div>
+
+    <main tabindex="0" id="mainContent"></main>
+    <footer>
+      <p>Copyright &copy; 2023 - Hunger App</p>
+    </footer>
+  </body>
+</html>

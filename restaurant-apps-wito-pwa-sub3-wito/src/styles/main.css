@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f9;
+  color: #212121;
+}
+/* membuat gambar sama ukuran */
+.post-item__thumbnail {
+  display: block;
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.post-item__thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* skip to konten */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: cornflowerblue;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header */
+.header__inner {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__title {
+  font-family: 'Lilita One', cursive;
+  font-weight: bold;
+  font-size: clamp(36px, 8.5vw, 90px);
+  background: linear-gradient(180deg, orange, crimson);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__menu {
+  font-size: 32px;
+  margin: 10px auto;
+  width: 44px;
+  height: 44px;
+  display: block;
+  background-color: #f7f7f9;
+  border: none;
+}
+
+/* nav */
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 1.3em;
+  text-decoration: none;
+  color: #616161;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* Jumbotron */
+.hero {
+  min-height: 380px;
+  max-height: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.jumbotron img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.hero__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  max-width: 800px;
+  background-color: rgba(153, 153, 153, 0.5);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  /* default 8.5vw max 72px min 36px */
+  font-size: clamp(16px, 8.5vw, 72px);
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  /* default 4.5vw max 48px min 18px */
+  font-size: clamp(8px, 4.5vw, 48px);
+  font-weight: 300;
+}
+
+/*
+ * content
+ */
+
+.content {
+  padding: 2em;
+  width: 100%;
+}
+
+.latest {
+  width: 100%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.latest__label {
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.latest__label::after {
+  content: '';
+  margin-top: 16px;
+  display: block;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.main-content__not__found {
+  text-align: center;
+  font-size: 32px;
+  font-weight: lighter;
+}
+/*
+ * post
+ */
+
+.posts {
+  margin: 32px auto auto;
+  text-align: left;
+}
+
+/*
+ * post item
+ */
+/* position relative agar child dapat diatur posisi menggunakan absolute */
+.post-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-item__content {
+  padding: 1em;
+}
+
+.post-item__thumbnail {
+  width: 100%;
+}
+
+/* position absolute untuk menempatkan city di atas gambar */
+#post-item__city {
+  position: absolute;
+  top: 0;
+  background-color: rgba(100, 148, 237, 0.9);
+  color: #f7f7f9;
+  display: block;
+  width: fit-content;
+  padding: 0.5em;
+  font-weight: bold;
+  z-index: 2;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#post-item__city:focus {
+  outline-color: rgba(0, 0, 0, 0.5);
+}
+
+.post-item__rating {
+  font-size: 1rem;
+  background-color: rgba(100, 148, 237, 0.9);
+  color: orange;
+  display: block;
+  width: fit-content;
+  padding: 0.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.post-item__rating:focus {
+  outline-color: rgba(0, 0, 0, 0.2);
+}
+
+.post-item__rating__score {
+  color: #f7f7f9;
+  font-weight: bold;
+}
+
+.post-item__title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 16px;
+  transition: 0.3s opacity;
+}
+
+.post-item__title a {
+  text-decoration: none;
+  color: #212121;
+  display: block;
+  width: fit-content;
+  height: 44px;
+}
+
+.post-item__title:focus {
+  outline-color: rgba(0, 0, 0, 0.2);
+}
+
+.post-item__description {
+  font-size: 12px;
+  line-height: 1.5em;
+  text-align: justify;
+  /* membatasi karakter deskripsi */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.post-item__description:focus {
+  outline-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Detail */
+#detail {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-item {
+  width: 100%;
+  margin: 1rem auto;
+  background-color: #f7f7f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.detail-item__post {
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+.detail-item__info {
+  width: 100%;
+  min-height: 250px;
+  padding: 1em;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-item__menu {
+  padding: 1em;
+}
+
+.detail-item__menu h4 {
+  padding: 1em;
+}
+
+.detail-item__image {
+  display: block;
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.detail-item__review {
+  padding: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-style: dotted;
+  border-color: orange;
+}
+
+/* like */
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: cornflowerblue;
+  color: #f7f7f9;
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+}
